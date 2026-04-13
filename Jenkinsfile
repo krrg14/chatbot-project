@@ -30,13 +30,23 @@ pipeline {
                 '''
             }
         }
-/*
+
+        stage('docker login'){
+            steps{
+                withCredentials([usernamePassword(
+                    credentialsID:    'docker-hub-cred'
+                    usernameVariable: "USER"
+                    passwordVariable: "PASS"
+                )]) {
+                    sh 'echo $PASS  | docker login -u $USER --password-stdin'
+                }
+            }
+        }
+
         stage('docker push'){
             steps{
-                withCredentials({
-                    
-                })
+                sh 'docker push ${IMAGE_NAME}'
             }
-        }*/
+        }
     }
 }
