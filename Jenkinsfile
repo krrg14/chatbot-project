@@ -26,6 +26,7 @@ pipeline {
                     docker kill chatbot
                     docker rm chatbot
                     docker run -it -d --name chatbot -p 9000:8501 ${IMAGE_NAME}
+                    docker system prune -a -f
                 '''
             }
         }
