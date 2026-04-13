@@ -11,7 +11,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/krrg14/chatbot-project.git'
             }
         }
-
+/*
         stage('remove unused'){
             steps{
                 sh'''
@@ -20,15 +20,18 @@ pipeline {
                 '''
             }
         }
-
+*/
         stage('docker build'){
             steps{
                 sh'''
                     docker build -t ${IMAGE_NAME} .
+                    docker kill chatbot
+                    docker rm chatbot
+                    docker run -it -d --name chatbot -p 9000:8501 ${IMAGE_NAME}
                 '''
             }
         }
-
+/*
         stage('testing'){
             steps{
                 sh'''
@@ -38,6 +41,7 @@ pipeline {
                 '''
             }
         }
+*/        
         stage('docker login'){
             steps{
                 script {
