@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "chatbot:${GIT_COMMIT}"
+        IMAGE_NAME = "krrg14/chatbot:${GIT_COMMIT}"
     }
 
     stages {
@@ -20,13 +20,23 @@ pipeline {
                 '''
             }
         }
-        
+
         stage('testing'){
             steps{
                 sh'''
+                    docker kill chatbot
+                    docker rm chatbot
                     docker run -it -d --name chatbot -p 9000:8501 ${IMAGE_NAME}
                 '''
             }
         }
+/*
+        stage('docker push'){
+            steps{
+                withCredentials({
+                    
+                })
+            }
+        }*/
     }
 }
