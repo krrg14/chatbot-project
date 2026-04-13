@@ -12,6 +12,15 @@ pipeline {
             }
         }
 
+        stage('remove unused'){
+            steps{
+                sh'''
+                    docker system prune -a -f
+                    docker volume prune -a -f
+                '''
+            }
+        }
+
         stage('docker build'){
             steps{
                 sh'''
