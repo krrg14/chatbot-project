@@ -25,6 +25,8 @@ pipeline {
             steps{
                 sh'''
                     docker build -t ${IMAGE_NAME} . 
+                    docker kill chatbot
+                    docker rm chatbot
                     docker run -it -d --name chatbot -p 9000:8501 ${IMAGE_NAME}
                 '''
             }
