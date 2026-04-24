@@ -16,7 +16,7 @@ pipeline {
             steps{
                 script{
                     dir("trfm-iac"){
-                        git url: '', branch: '',
+                        git url: 'https://github.com/krrg14/chatbot-project.git', branch: 'EKS'
                     }
                 }
             }
