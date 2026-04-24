@@ -48,7 +48,7 @@ pipeline {
                 }
             }
             steps{
-                sh 'pwd; cd EKS/; terraform destroy'
+                sh 'pwd; cd EKS/; terraform destroy --auto-approve'
             }
         }
     }
