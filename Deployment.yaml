@@ -15,9 +15,9 @@ spec:
         app: chatbot
     spec:
       containers:
-      - image: chatbot
+      - image: replace
         name: chatbot
-        imagePullPolicy: always
+        imagePullPolicy: Always
         ports: 
         - containerPort: 8501
 
