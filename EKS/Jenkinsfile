@@ -51,5 +51,16 @@ pipeline {
                 sh 'pwd; cd EKS/; terraform destroy --auto-approve'
             }
         }
+
+        stage('backend stage') {
+            steps{
+                sh '''
+                    pwd
+                    cd EKS/
+                    aws s3 cp *.tfstate s3://unuesd-delete-volumes-bucket/eks/
+                '''
+            }
+        }
+
     }
 }
