@@ -6,6 +6,8 @@ pipeline {
         NAMESPACE = "chatbot"
         REGION = "ap-south-1"
         CLUSTER_NAME = "chatbot_cluster"
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID') 
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
 
     stages {
