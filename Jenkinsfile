@@ -3,6 +3,9 @@ pipeline {
 
     environment {
         IMAGE_NAME = "krrg14/chatbot:${GIT_COMMIT}"
+        NAMESPACE = "chatbot"
+        REGION = "ap-south-1"
+        CLUSTER_NAME = "chatbot_cluster"
     }
 
     stages {
@@ -44,6 +47,12 @@ pipeline {
         stage('docker push'){
             steps{
                 sh 'docker push ${IMAGE_NAME}'
+            }
+        }
+
+        stage('verifying cluster'){
+            steps {
+                sh " aws eks update-kubeconfig --region ${REGION} --name ${chatbot_cluster} "
             }
         }
     }
