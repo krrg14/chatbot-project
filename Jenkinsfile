@@ -51,7 +51,7 @@ pipeline {
         stage('deploy to EKS cluster') {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: 'chatbot_cluster', contextName: '', credentialsId: 'kube', namespace: 'chatbot', restrictKubeConfigAccess: false, serverUrl: 'https://6EC17A81BB656431D6E3B1996451DC32.gr7.ap-south-1.eks.amazonaws.com') {
-                    sh "sed 's|replace|${IMAGE_NAME}|g' Deployment.yaml"
+                    sh "sed -i 's|replace|${IMAGE_NAME}|g' Deployment.yaml"
                     sh "kubectl apply -f Deployment.yaml -n ${NAMESPACE}"
                 }
             }
