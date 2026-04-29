@@ -42,7 +42,7 @@ pipeline {
 
         stage('update the cluster'){
             steps{
-                sh "aws eks update-kubeconfig --region ${REGION} --name ${chatbot_cluster}"
+                sh "aws eks update-kubeconfig --region ${REGION} --name ${CLUSTER_NAME}"
             }
         }
 
