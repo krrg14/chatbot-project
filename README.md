@@ -2,17 +2,14 @@
 
 # snapshot of project
 
+![alt text](<1 CICD image.png>)
 
+![alt text](<2 cluster.png>)
 
-![alt text](<Screenshot 2026-04-30 174621.png>)
+![alt text](<3 docker images.png>)
 
-![alt text](<Screenshot 2026-04-30 175317.png>)
+![alt text](<4 workernode.png>)
 
-![alt text](<Screenshot 2026-04-30 174936.png>)
+![alt text](<5 kubectl cli .png>)
 
-![alt text](<Screenshot 2026-04-30 175524.png>)
-
-![alt text](<Screenshot 2026-04-30 180024.png>)
-
-![alt text](<Screenshot 2026-04-30 180348.png>)
-
+![alt text](<6 output chatbot.png>)
