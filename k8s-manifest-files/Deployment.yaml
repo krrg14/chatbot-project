@@ -15,7 +15,7 @@ spec:
         app: chatbot
     spec:
       containers:
-      - image: replace
+      - image: krrg14/chatbot:e3d62ec32b41c7e05d2e90603dc9c021a1e0e824
         name: chatbot
         imagePullPolicy: Always
         ports: 
