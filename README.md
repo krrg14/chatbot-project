@@ -1,9 +1,9 @@
-# chatbot-project
-# Architecture of this project
+# Chatbot-project
+# Architecture Overview:
 <img width="1800" height="623" alt="chatbot arch" src="https://github.com/user-attachments/assets/2c81ac82-cb66-4e1d-ba36-4e19dfa3d253" />
 
 ---
-# snapshots of this project
+# Snapshots:
 
 ![alt text](<1 CICD image.png>)
 ---
